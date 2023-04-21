@@ -74,10 +74,15 @@
 <body
 	style="background-image: url('https://t3.ftcdn.net/jpg/04/61/21/46/360_F_461214664_3YPpasoxfJZ6JARXgfBH4fQNLp2Fz5E5.jpg');background-size: cover;">
 	<div class="container-fluid">
+
+		<img src="">
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-6 text-center"><h1 id="get"></h1></div>
 			<div class="col-12 col-md-6 col-lg-5 game">
 				<div class="row">
+					<div class="col-12 text-center ">
+						<img id="diceresult" width="10%"/>
+					</div>
 					<div class="col-6 text-center">
 						<h1 id="finalresult" style="display:inline-block" class="playerbtn"></h1>
 					</div>
@@ -106,6 +111,11 @@
 			console.log(randomnumber)
 
 			document.getElementById("finalresult").innerHTML = randomnumber
+			// var diceResult = document.getElementById("diceresult")
+			// diceResult.setAttribute('src', 'dice-six-faces-one (1).png')
+			diceResult(randomnumber)
+
+	
 		}
 
 		function player2() {
@@ -141,12 +151,37 @@
 				// document.getElementById("finalresult").innerHTML = '', 1000
 			},1000)
 
-
+			diceResult(randomnumber)
 		}
 		function restart(){
 			document.getElementById("finalresult2").innerHTML = '';
 			document.getElementById("finalresult").innerHTML = '';
 			document.getElementById("get").innerHTML= ''
+		}
+
+
+		function diceResult(randomnumber){
+			var diceResult = document.getElementById("diceresult")
+			console.log("dice valueeeee",randomnumber)
+			if(randomnumber==1){
+	            diceResult.setAttribute('src', 'd1.png')
+			}
+			else if(randomnumber==2){
+				diceResult.setAttribute('src', 'd2.png')
+			}
+			else if(randomnumber==3){
+				diceResult.setAttribute('src', 'd3.png')
+			}
+			else if(randomnumber==4){
+				diceResult.setAttribute('src', 'd4.png')
+			}
+			else if(randomnumber==5){
+				diceResult.setAttribute('src', 'd5.png')
+			}
+			else{
+				diceResult.setAttribute('src', 'd6.png')
+			}
+			
 		}
 
 
